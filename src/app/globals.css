@@ -1,0 +1,102 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* responsive css */
+
+@media (min-width: 1350px) {
+  .contentMessage {
+    width: 70% !important;
+  }
+}
+/* 1053 */
+
+@media (max-width: 1053px) {
+  .messageImagContainer2 {
+    padding-top: 0px !important;
+  }
+  .contentMessage {
+    width: 32rem !important;
+  }
+  img.dog3image {
+    height: 100% !important;
+    width: 100% !important;
+  }
+  .messageImag2Container {
+    height: 22rem !important;
+    width: 33rem !important;
+  }
+}
+@media (min-width: 1677px) {
+  .messageImag2Container {
+    height: 39rem !important;
+    width: 50rem !important;
+    padding-top: 10% !important;
+  }
+}
+/* 1676 */
+/* moblie mode */
+
+@media (max-width: 800px) {
+  .disflexsection2 {
+    display: block !important;
+  }
+  .left1 {
+    width: 100% !important;
+  }
+  .messageImagContainer2 {
+    height: 29rem !important;
+    text-align: start !important;
+    width: 100%;
+  }
+  .contentMessage {
+    width: 85% !important;
+  }
+}
+
+@media (max-width: 530px) {
+  .contentMessage {
+    padding: 2rem 0rem 0rem 3rem !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    height: 41% !important;
+  }
+  .disflexsection3 {
+    display: block !important;
+    height: 100%;
+  }
+  .messageImag2Container {
+    height: 20rem !important;
+    width: 100% !important;
+  }
+  .contentMessage2 {
+    padding: 3rem !important;
+    width: 100% !important;
+    height: 80% !important;
+    overflow: hidden !important;
+  }
+  img.dog2image {
+    height: 100% !important;
+    width: 100% !important;
+}
+}
+
+@media (max-width: 430px) {
+  .messageImag2Container {
+    height: 18rem !important;
+  }
+}
+
+
+@media (max-width: 330px) {
+  .messageImag2Container {
+    height: 16rem !important;
+  }
+}
