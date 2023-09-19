@@ -1,9 +1,7 @@
-"use client";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Inter } from "next/font/google";
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-// ..
+import "aos/dist/aos.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
