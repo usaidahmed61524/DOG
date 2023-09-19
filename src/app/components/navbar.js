@@ -1,11 +1,26 @@
 "use client";
+import { useEffect } from "react";
 import "../components/styles/navbar.css";
 import Image from "next/image";
 import { IoLogoGameControllerB } from "react-icons/io";
 import { BsTwitter } from "react-icons/bs";
 import { AiFillInstagram } from "react-icons/ai";
 import logo from "../images/logo.png";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+import dynamic from "next/dynamic";
+import AOS from "aos";
+
 const MyNavbar = () => {
+  useEffect(() => {
+    const AOS = require('aos');
+    AOS.init();
+  }, []);
+
+
+  const AOS = dynamic(() => import("aos"), {
+    ssr: false, // This will load the module only on the client side
+  });
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">

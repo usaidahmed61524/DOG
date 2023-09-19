@@ -2,6 +2,8 @@
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Inter } from "next/font/google";
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -19,15 +21,8 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Snowburst+One&display=swap"
           rel="stylesheet"
         />
-
-        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
       </head>
-      <body className={inter.className}>
-        {children}
-
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>AOS.init();</script>
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
