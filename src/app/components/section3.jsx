@@ -1,18 +1,28 @@
 "use client";
+import { useEffect } from "react";
 import Image from "next/image";
 import "./styles/section3.css";
 import dogIma2 from "../images/dog3.png";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Section3 = () => {
+  useEffect(() => {
+    const AOS = require("aos");
+    AOS.init();
+  }, []);
   return (
     <div className="section3Container">
       <div className="disflexsection3">
-        <div className="left2">
+        <div className="left2" data-aos="zoom-in-up" data-aos-duration="1000">
           <Image src={dogIma2} alt="dog image" className="dog3image" />
         </div>
 
         <div className="right2">
-          <div className="messageImag2Container">
+          <div
+            className="messageImag2Container"
+            data-aos="flip-left"
+            data-aos-duration="1000"
+          >
             <div className="contentMessage2">
               <h2 className="text-white">Doges love art</h2>
               <p className="text-white">

@@ -12,10 +12,9 @@ import AOS from "aos";
 
 const MyNavbar = () => {
   useEffect(() => {
-    const AOS = require('aos');
+    const AOS = require("aos");
     AOS.init();
   }, []);
-
 
   const AOS = dynamic(() => import("aos"), {
     ssr: false, // This will load the module only on the client side
@@ -27,7 +26,7 @@ const MyNavbar = () => {
         <div
           className="navbar-brand"
           data-aos="zoom-in"
-          data-aos-duration="3000"
+          data-aos-duration="1000"
         >
           <Image src={logo} alt="logo" className="logo" />
         </div>

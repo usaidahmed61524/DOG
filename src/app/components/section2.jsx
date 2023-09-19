@@ -1,14 +1,25 @@
 "use client";
+import { useEffect } from "react";
 import "./styles/section2.css";
 import dogIma2 from "../images/dog2.png";
 import Image from "next/image";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Section2 = () => {
+  useEffect(() => {
+    const AOS = require("aos");
+    AOS.init();
+  }, []);
   return (
     <div className="section2Container">
       <div className="disflexsection2">
         <div className="left1">
-          <div className="messageImagContainer2">
+          <div
+            className="messageImagContainer2"
+            data-aos="flip-left"
+            data-aos-duration="1000"
+          >
             <div className="contentMessage">
               <h2>Doges love memes</h2>
               <p>
@@ -24,7 +35,7 @@ const Section2 = () => {
           <div className="btn btn-lg btn-color-yellow mt-4">PROOF OF MEME</div>
         </div>
 
-        <div className="right1">
+        <div className="right1" data-aos="zoom-in-up" data-aos-duration="1000">
           <Image src={dogIma2} alt="dog image" className="dog2image" />
         </div>
       </div>
