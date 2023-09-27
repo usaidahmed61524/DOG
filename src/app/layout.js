@@ -2,6 +2,8 @@ import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Inter } from "next/font/google";
 import "aos/dist/aos.css";
+import { AuthProvider } from "../app/Authentication";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -20,7 +22,9 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <AuthProvider>{children}</AuthProvider>
+      </body>
     </html>
   );
 }

@@ -21,9 +21,11 @@ li.nav-item {
 }
 nav.navbar.navbar-expand-lg.bg-body-tertiary {
   background: transparent !important;
-  
 }
-
+button.btn.btn-dark {
+  background-color: #e4e2e3;
+  color: black;
+}
 .navbar-expand-lg .navbar-collapse {
   display: flex !important;
   justify-content: end;
