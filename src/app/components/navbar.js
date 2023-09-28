@@ -46,7 +46,7 @@ const MyNavbar = () => {
       useObj = response.data;
       swal("Login", "successfully Login With MMIT Domain:", "success");
     } catch (error) {
-      swal("Error", "credential are not valid", "error");
+      swal("Error", "Credentials are not valid", "error");
       setLoading(false);
     }
 
@@ -90,7 +90,7 @@ const MyNavbar = () => {
 
           setLoginBtnVisible(false);
         } else {
-          swal("Error", "Credential are not valid", "error");
+          swal("Error", "Credentials are not valid", "error");
           setLoading(false);
         }
       }
