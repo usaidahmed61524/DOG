@@ -40,7 +40,7 @@ const MyNavbar = () => {
     let userData;
     try {
       const response = await axios.get(
-        `http://localhost:3000/login?username=${domain}&tokenid=${id}`
+        `/login?username=${domain}&tokenid=${id}`
       );
       userData = response.data;
       swal("Login", "Successfully Login With MMIT Domain:", "success");
