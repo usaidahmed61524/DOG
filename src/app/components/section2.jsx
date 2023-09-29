@@ -32,7 +32,7 @@ const Section2 = () => {
               </p>
             </div>
           </div>
-          <div className="btn btn-lg btn-color-yellow mt-4">PROOF OF MEME</div>
+          <div className="btn btn-lg btn-color-yellow mt-4">Proof of men</div>
         </div>
 
         <div className="right1" data-aos="zoom-in-up" data-aos-duration="1000">

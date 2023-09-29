@@ -8,8 +8,6 @@ import { AiFillInstagram } from "react-icons/ai";
 import logo from "../images/logo.png";
 import "aos/dist/aos.css";
 import dynamic from "next/dynamic";
-import AOS from "aos";
-
 import { useAuth } from "../Authentication";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
@@ -36,21 +34,22 @@ const MyNavbar = () => {
     ssr: false,
   });
 
-  const loginwithDomain = async (d, i) => {
-    let useObj;
+  // loginwithDomain function api call ////////////////////
+
+  const loginwithDomain = async (domain, id) => {
+    let userData;
     try {
       const response = await axios.get(
-        `/login?username=${d}&tokenid=${i}`
+        `http://localhost:3000/login?username=${domain}&tokenid=${id}`
       );
-      // console.log(response.data);
-      useObj = response.data;
-      swal("Login", "successfully Login With MMIT Domain:", "success");
+      userData = response.data;
+      swal("Login", "Successfully Login With MMIT Domain:", "success");
     } catch (error) {
       swal("Error", "Credentials are not valid", "error");
       setLoading(false);
     }
 
-    return { d, i, useObj };
+    return { domain, id, userData };
   };
 
   const handleClose = () => {
@@ -59,7 +58,7 @@ const MyNavbar = () => {
   };
   const onSubmit = async () => {
     if (!domain || !tokenId) {
-      swal("Error", "please fill this fields!", "error");
+      swal("Error", "Please fill all the fields", "error");
       // setLoading(false);
 
       return;
@@ -75,11 +74,11 @@ const MyNavbar = () => {
         try {
           login = await loginwithDomain(domain, tokenId);
         } catch (error) {
-          swal("Error", `${error}`, "error");
+          swal("Error", error, "error");
           setLoading(false);
         }
 
-        const user = login.useObj;
+        const user = login.userData;
         const userValidate = user.success;
         if (userValidate) {
           setLoading(false);
@@ -132,8 +131,6 @@ const MyNavbar = () => {
             </li>
 
             <li className="nav-item">
-              {/* <button className="btn btn-dark">Login With MMIT Domain</button> */}
-
               {loginBtnVisible ? (
                 <Button className="btn btn-dark" onClick={handleShow}>
                   Login With MMIT Domain
@@ -142,7 +139,7 @@ const MyNavbar = () => {
                 <>
                   <span className="text-light my-4 mx-2">{userName}</span>
                   <Button className="login-btn" onClick={logOutUser}>
-                    LogOut
+                    Logout
                   </Button>
                 </>
               )}
@@ -155,7 +152,9 @@ const MyNavbar = () => {
             ) : (
               <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                  <Modal.Title className="text-light">Insert Your MMIT Domain</Modal.Title>
+                  <Modal.Title className="text-light">
+                    Insert Your MMIT Domain
+                  </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                   <Form>
@@ -164,7 +163,7 @@ const MyNavbar = () => {
                         type="text"
                         placeholder="Domain"
                         onChange={(e) => {
-                          setDomain(e.target.value);
+                          setDomain(e.target.value.toLowerCase());
                           setInputError("");
                         }}
                       />
